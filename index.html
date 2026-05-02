@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Seat & Exam Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Main Navigation -->
+        <div id="main-menu" class="card">
+            <h1 class="logo">📚 SSC Library Hub</h1>
+            <div class="menu-grid">
+                <button onclick="showSection('entry-section')" class="menu-card">
+                    <span class="icon">📝</span>
+                    <span>Entry / Exit</span>
+                </button>
+                <button onclick="showSection('test-section')" class="menu-card test-btn">
+                    <span class="icon">✍️</span>
+                    <span>Daily Test (20Q)</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Section 1: Entry/Exit with Sheet Number -->
+        <div id="entry-section" class="card hidden">
+            <h2>Student Check-In/Out</h2>
+            <div class="input-group">
+                <input type="text" id="stdName" placeholder="Student Name">
+                <input type="number" id="seatNo" placeholder="Seat Number (e.g. 01)">
+            </div>
+            <div class="action-btns">
+                <button onclick="handleLog('IN')" class="btn-checkin">Check IN</button>
+                <button onclick="handleLog('OUT')" class="btn-checkout">Check OUT</button>
+            </div>
+            <button onclick="showSection('main-menu')" class="btn-flat">Back to Home</button>
+
+            <div class="log-viewer">
+                <h3>Live Library Status</h3>
+                <div class="table-scroll">
+                    <table id="logTable">
+                        <thead>
+                            <tr>
+                                <th>Seat</th>
+                                <th>Student</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="logBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test & Result Sections (Keep as per previous code) -->
+        <!-- ... (Rest of the previous HTML structure) ... -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
